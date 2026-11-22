@@ -1,0 +1,21 @@
+{
+  "name": "fynd-checkout",
+  "version": "1.0.0",
+  "description": "Single-page checkout - FyndHacks SDET Task",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./",
+    "test": "npx playwright test"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "@playwright/test": "^1.40.0",
+    "process": "^0.11.10"
+  }
+}
+

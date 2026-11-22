@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Production & Bundler outputs
+dist/
+.parcel-cache/
+
+# Test reports & outputs
+test-results/
+playwright-report/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
