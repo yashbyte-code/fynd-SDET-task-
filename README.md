@@ -1,6 +1,8 @@
 # Single-Page Checkout – FyndHacks SDET Task
 
-A single-page checkout application built with React, bundled with Parcel, and tested using Playwright browser automation.
+[![Playwright Tests](https://github.com/yashbyte-code/fynd-SDET-task-/actions/workflows/ci.yml/badge.svg)](https://github.com/yashbyte-code/fynd-SDET-task-/actions/workflows/ci.yml)
+
+A single-page checkout application built with React, bundled with Parcel, and tested using Playwright browser automation with automated CI/CD pipeline.
 
 ---
 
@@ -42,6 +44,7 @@ npx playwright show-report
 - **Bundler**: Parcel 2 (Zero-configuration bundler with fast hot module replacement)
 - **Styling**: Modern, responsive CSS (Unified single-card layout, mobile & desktop optimized)
 - **Test Automation**: Playwright Test (Chromium/Chrome channel, UI assertions, automatic waits)
+- **CI/CD Pipeline**: GitHub Actions (Automated test execution on push and PR)
 
 ---
 
@@ -98,6 +101,9 @@ Running 3 tests using 1 worker
 - **Expected Result**: Checkout is blocked. An error alert `"Your cart is empty. Please add items before checking out."` is displayed. No confirmation screen or order reference is generated.
 - **Actual Result**: Pass ✅. The validation error appeared immediately below the name field. The customer's entered name was preserved, and no order confirmation was produced.
 - **Defect Status**: No defect found.
+- **Evidence**:
+  
+  ![Empty Cart Validation](evidence/empty-cart-blocked.png)
 
 ---
 
@@ -112,6 +118,9 @@ Running 3 tests using 1 worker
 - **Expected Result**: The first click locks submission (`isProcessing` state). The button disables and displays a spinner (`"Processing..."`). Only one single order confirmation is rendered with exactly one order reference number.
 - **Actual Result**: Pass ✅. Exactly one order confirmation was generated. Double-clicking did not duplicate the order.
 - **Defect Status**: No defect found.
+- **Evidence**:
+  
+  ![Order Confirmation Single Instance](evidence/successful-checkout.png)
 
 ---
 
@@ -131,6 +140,12 @@ In accordance with the challenge brief (*"Report real defects if found; don't in
 ## 📁 Repository Structure
 
 ```text
+├── .github/workflows/
+│   └── ci.yml                # Automated CI pipeline for Playwright tests
+├── evidence/                 # Visual test evidence screenshots
+│   ├── empty-cart-blocked.png
+│   ├── successful-checkout.png
+│   └── double-click-protected.png
 ├── src/
 │   ├── index.html            # Main HTML document
 │   ├── index.jsx             # React entry point
@@ -148,4 +163,3 @@ In accordance with the challenge brief (*"Report real defects if found; don't in
 ├── package.json              # Project dependencies and test scripts
 └── README.md                 # Complete submission documentation
 ```
-
