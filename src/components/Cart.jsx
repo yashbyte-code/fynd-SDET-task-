@@ -106,7 +106,10 @@ export default function Cart({
           data-testid="name-input"
           placeholder="e.g. Yash Sharma"
           value={name}
-          onChange={(e) => onNameChange(e.target.value)}
+          onChange={(e) => {
+            const lettersOnly = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+            onNameChange(lettersOnly);
+          }}
         />
       </div>
 

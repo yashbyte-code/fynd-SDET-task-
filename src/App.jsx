@@ -63,6 +63,11 @@ export default function App() {
       return;
     }
 
+    if (!/^[a-zA-Z\s]+$/.test(name.trim())) {
+      setError('Name can only contain letters and spaces.');
+      return;
+    }
+
     setIsProcessing(true);
     setError('');
 
