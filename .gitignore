@@ -15,3 +15,11 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Presentation files (local only)
+presentation.html
+presentation-guide.md
+generate_ppt.py
+*.pptx
+
+
+
